@@ -37,7 +37,7 @@ describe('Zebra stripes', function() {
     expect(coloredZebraStripes.filter(stripe => stripe.color === 'white').length).toEqual(4);
   });
 
-  it('should not have modified the objects in the original `robots` array', function() {
+  it('should not have modified the objects in the original `zebraStripes` array', function() {
     expect(zebraStripes.every(stripe => stripe.color === null)).toBeTruthy('The original objects in the `zebraStripes` array have been modified.');
   });
 });

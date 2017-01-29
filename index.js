@@ -12,18 +12,17 @@ const robots = [
 ];
 
 var sortedRobots = robots.map(function(robot){
-  if(knownDecepticons.includes(robot.name)){
-    robot.alliance = "decepticon"
+  let robotCopy = Object.assign({}, robot)
+  if(knownDecepticons.includes(robotCopy.name)){
+
+    robotCopy.alliance = "decepticon"
   }
   else {
-    robot.alliance = "autobot"
+    // let robotCopy = Object.assign({}, robot)
+    robotCopy.alliance = "autobot"
   }
-  return robot
+  return robotCopy
 })
-
-
-
-
 
 
 
@@ -37,3 +36,14 @@ const zebraStripes = [
   { width: 0.59, color: null },
   { width: 7.31, color: null },
 ];
+
+var coloredZebraStripes = zebraStripes.map(function(zebra){
+  let zebraCopy = Object.assign({}, zebra)
+  if(zebraCopy.width < 7){
+    zebraCopy.color = "white"
+  }
+  else {
+    zebraCopy.color = "black"
+  }
+  return zebraCopy
+})
